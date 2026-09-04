@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Special Birthday Gift For You ♡</title>
+    <meta name="description" content="Hadiah ulang tahun virtual interaktif penuh cinta dan kenangan terindah.">
+    
+    <!-- Google Fonts: Playfair Display, Sacramento (Calligraphy), Plus Jakarta Sans, Patrick Hand (Handwritten notes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Ambient Elements & Sparkles -->
+    <div id="ambient-particles" aria-hidden="true"></div>
+
+    <!-- Audio Element (Custom Vanilla Player) -->
+    <audio id="music" preload="auto" loop>
+        <source src="assets/music/birthday.mp3" type="audio/mpeg">
+        <source src="assets/music/birthday.m4a" type="audio/mp4">
+        <source src="assets/music/birthday.wav" type="audio/wav">
+    </audio>
+
+    <!-- Floating Romantic Music Capsule (Visible on Pages 2-5) -->
+    <div id="floating-music-btn" class="floating-music-capsule hidden" role="button" tabindex="0" aria-label="Putar atau Jeda Musik" title="Ketuk untuk putar / jeda musik">
+        <div class="capsule-vinyl-wrap">
+            <div class="capsule-vinyl" id="capsule-vinyl">
+                <div class="capsule-vinyl-center"></div>
+            </div>
+        </div>
+        <div class="capsule-info">
+            <span class="capsule-track-title" id="capsule-track-title">About You</span>
+            <div class="capsule-eq-bars" id="capsule-eq-bars" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER (Single Page Application) -->
+    <main id="app">
+
+        <!-- ==============================================
+             PAGE 1 — OPENING / LOADING
+             ============================================== -->
+        <section id="page1" class="page active">
+            <div class="page-content center-flow">
+                <div class="opening-glow-orb"></div>
+
+                <div id="opening-badge" class="opening-badge">A GIFT OF LOVE</div>
+                <h1 id="opening-title" class="opening-title">A Special Gift<br><span>For You</span></h1>
+                
+                <div class="heart-pulse-box">
+                    <span class="pulsing-heart">❤️</span>
+                    <div class="pulse-ring"></div>
+                </div>
+
+                <!-- Loading / Progress Bar -->
+                <div class="loader-container">
+                    <div class="loader-track">
+                        <div id="loader-progress" class="loader-progress"></div>
+                    </div>
+                    <div class="loader-meta">
+                        <span id="loader-percent">0%</span>
+                        <span id="loader-status" class="loader-status">Mempersiapkan kejutanmu...</span>
+                    </div>
+                </div>
+
+                <p id="tap-to-open-hint" class="tap-hint hidden">Ketuk layar jika tidak berpindah otomatis ♡</p>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             PAGE 2 — 3D INTERACTIVE ENVELOPE
+             ============================================== -->
+        <section id="page2" class="page">
+            <div class="page-content center-flow envelope-scene">
+                <!-- Background Scrapbook Decor -->
+                <div class="envelope-decorations" aria-hidden="true">
+                    <div class="decor-item flower-1">🌸</div>
+                    <div class="decor-item flower-2">🌷</div>
+                    <div class="decor-item butterfly-1">🦋</div>
+                    <div class="decor-item sparkle-1">✨</div>
+                    <div class="decor-item sparkle-2">✨</div>
+                    <div class="decor-item heart-float-1">💖</div>
+                    <div class="decor-item heart-float-2">💕</div>
+                    
+                    <!-- Floating Polaroid Decor in background -->
+                    <div class="bg-polaroid polaroid-bg-left">
+                        <div class="bg-polaroid-inner">
+                            <img src="assets/images/photo1.png" alt="Preview" class="bg-polaroid-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' fill=\'%23f472b6\' viewBox=\'0 0 24 24\'><path d=\'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z\'/></svg>'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="envelope-header-text">
+                    <span class="script-subtitle">Sebuah Surat Istimewa</span>
+                    <h2 class="scene-title">Sentuh Amplop Untuk Membuka</h2>
+                </div>
+
+                <!-- Pure HTML + CSS 3D Envelope -->
+                <div class="envelope-perspective-stage">
+                    <div id="envelope-3d" class="envelope-3d">
+                        <!-- Inside Letter (Slides up and zooms) -->
+                        <div id="envelope-letter" class="envelope-letter-card">
+                            <div class="letter-preview-seal">💌</div>
+                            <div class="letter-preview-line line-title">Happy Birthday</div>
+                            <div class="letter-preview-line"></div>
+                            <div class="letter-preview-line short"></div>
+                            <div class="letter-preview-signature">Untukmu ♡</div>
+                        </div>
+
+                        <!-- Envelope Pocket & Flaps -->
+                        <div class="envelope-pocket">
+                            <div class="flap-left"></div>
+                            <div class="flap-right"></div>
+                            <div class="flap-bottom"></div>
+                            
+                            <!-- Top Flap that folds open 180 degrees -->
+                            <div id="envelope-flap-top" class="flap-top">
+                                <!-- Wax Seal Button -->
+                                <button id="wax-seal" class="wax-seal" aria-label="Buka Amplop">
+                                    <span class="seal-icon">❤️</span>
+                                    <span class="seal-ring"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Button to Open -->
+                <div class="envelope-action-bar">
+                    <button id="btn-open-envelope" class="btn-secondary">
+                        <span>Buka Surat</span>
+                        <span class="btn-arrow">✉️</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             PAGE 3 — BIRTHDAY LETTER & VINYL MUSIC PLAYER
+             ============================================== -->
+        <section id="page3" class="page">
+            <div class="page-content scrollable-flow">
+                <div class="letter-container">
+                    <!-- Washi Tape at Top of Letter -->
+                    <div class="washi-tape tape-top"></div>
+
+                    <!-- Letter Stationery Header -->
+                    <header class="letter-header">
+                        <span class="letter-date" id="letter-date-display">6 September 2026</span>
+                        <h2 class="letter-heading-script">Happy Birthday, <span id="letter-name-display">Sayang</span>!</h2>
+                        <div class="letter-divider">
+                            <span>❦</span>
+                            <div class="divider-line"></div>
+                            <span>❦</span>
+                        </div>
+                    </header>
+
+                    <!-- Letter Body with Typewriter / Reveal effect -->
+                    <article class="letter-body">
+                        <div id="typewriter-text" class="typewriter-text"></div>
+                        <span id="typing-cursor" class="typing-cursor">|</span>
+                    </article>
+
+                    <!-- Polaroid Photo Alongside Letter -->
+                    <div class="letter-polaroid-wrapper">
+                        <div class="polaroid-card polaroid-tilt-left" data-index="0">
+                            <div class="washi-tape tape-corner"></div>
+                            <div class="polaroid-photo-box">
+                                <img id="letter-photo" src="assets/images/photo1.jpeg" alt="Foto Kenangan" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' fill=\'%23fce7f3\' viewBox=\'0 0 24 24\'><rect width=\'24\' height=\'24\' fill=\'%23ffe4e8\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'4\' fill=\'%23f43f5e\'>Special Memory ♡</text></svg>'">
+                            </div>
+                            <p class="polaroid-caption" id="letter-photo-caption">Hari paling indah bersamamu ♡</p>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         CUSTOM VINYL RECORD MUSIC PLAYER
+                         ========================================== -->
+                    <div class="vinyl-player-card">
+                        <div class="player-top-header">
+                            <span class="player-badge">NOW PLAYING</span>
+                            <span class="sound-wave-bars" id="sound-wave-bars">
+                                <span></span><span></span><span></span><span></span>
+                            </span>
+                        </div>
+
+                        <div class="player-main-grid">
+                            <!-- Turntable Chassis & Vinyl Record -->
+                            <div class="vinyl-deck">
+                                <div class="turntable-platter">
+                                    <div class="vinyl-disc" id="vinyl-disc">
+                                        <div class="vinyl-sheen"></div>
+                                        <div class="vinyl-center-label">
+                                            <span class="disc-heart">❤️</span>
+                                            <span class="disc-rpm">LOVE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Authentic Tonearm (Stays strictly inside turntable deck) -->
+                                <div class="tonearm" id="tonearm">
+                                    <div class="tonearm-base">
+                                        <div class="tonearm-pivot-screw"></div>
+                                    </div>
+                                    <div class="tonearm-stick">
+                                        <div class="tonearm-head"></div>
+                                    </div>
+                                </div>
+                                <div class="tonearm-rest"></div>
+                            </div>
+
+                            <!-- Track Info & Controls -->
+                            <div class="player-controls-panel">
+                                <div class="track-info">
+                                    <h4 class="track-title" id="track-title">Our Song</h4>
+                                    <p class="track-subtitle">Backsound kecil kecilan aja hehe</p>
+                                </div>
+
+                                <!-- Progress Bar & Time -->
+                                <div class="timeline-container">
+                                    <div class="timeline-slider" id="timeline-slider">
+                                        <div class="timeline-fill" id="timeline-fill"></div>
+                                        <div class="timeline-thumb" id="timeline-thumb"></div>
+                                    </div>
+                                    <div class="timeline-times">
+                                        <span id="current-time">0:00</span>
+                                        <span id="total-duration">3:45</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="player-buttons">
+                                    <button id="btn-player-rewind" class="btn-icon" aria-label="Mundur 10 detik" title="Mundur 10 detik">⏪</button>
+                                    <button id="btn-player-play" class="btn-play-pause" aria-label="Putar / Jeda Musik">
+                                        <span id="play-icon">▶</span>
+                                    </button>
+                                    <button id="btn-player-forward" class="btn-icon" aria-label="Maju 10 detik" title="Maju 10 detik">⏩</button>
+                                </div>
+
+                                <!-- Volume Slider Control -->
+                                <div class="player-volume-panel">
+                                    <button id="btn-volume-icon" class="btn-volume-icon" aria-label="Mute / Nyalakan Suara" title="Mute / Nyalakan Suara">🔊</button>
+                                    <div class="volume-slider-track" id="volume-slider-track">
+                                        <input type="range" id="volume-range" class="volume-range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume">
+                                        <div class="volume-bar-fill" id="volume-bar-fill" style="width: 75%;"></div>
+                                    </div>
+                                    <span id="volume-label" class="volume-label">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation to Memories Page -->
+                    <div class="page-nav-bar">
+                        <button id="btn-to-memories" class="btn-primary">
+                            <span>Buka Buku Kenangan Kita</span>
+                            <span class="btn-arrow">📖 ♡</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             PAGE 4 — OUR MEMORIES SCRAPBOOK
+             ============================================== -->
+        <section id="page4" class="page">
+            <div class="page-content scrollable-flow">
+                <div class="scrapbook-page-wrapper">
+                    <!-- Scrapbook Header -->
+                    <header class="scrapbook-header">
+                        <div class="washi-tape tape-center"></div>
+                        <span class="script-tag">Sweet Little Moments</span>
+                        <h2 class="scrapbook-title">Our Memories ♡</h2>
+                        <p class="scrapbook-subtitle">Setiap momen bersamamu adalah bagian favorit dalam hidupku</p>
+                        <p class="scrapbook-hint">(Ketuk foto untuk memperbesar ✨)</p>
+                    </header>
+
+                    <!-- Scrapbook Polaroid Collage Grid -->
+                    <div class="scrapbook-grid" id="scrapbook-grid">
+                        <!-- Dynamically populated via script.js for easy maintenance -->
+                    </div>
+
+                    <!-- Handwritten Scrapbook Sticky Note -->
+                    <div class="sticky-note">
+                        <div class="pin-push">📌</div>
+                        <p class="sticky-handwritten">"Aku bersyukur untuk setiap detik, tawa, dan cerita yang kita lalui bersama. Mari buat ribuan memori indah lagi!"</p>
+                        <span class="sticky-author">— Selamanya untukmu ♡</span>
+                    </div>
+
+                    <!-- Navigation to Final Page -->
+                    <div class="page-nav-bar center">
+                        <button id="btn-to-final" class="btn-primary btn-glow">
+                            <span>Lanjut ke Kejutan Terakhir</span>
+                            <span class="btn-arrow">🎁 ✨</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             PAGE 5 — FINAL CELEBRATION & CONFETTI
+             ============================================== -->
+        <section id="page5" class="page">
+            <!-- Confetti Canvas -->
+            <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+            <div class="page-content center-flow final-celebration">
+                <div class="final-card">
+                    <!-- Floating Celebration Icon -->
+                    <div class="celebration-badge">
+                        <span class="badge-cake">🎂</span>
+                        <div class="badge-sparkles">✨</div>
+                    </div>
+
+                    <h2 class="final-title">Happy Birthday ❤️</h2>
+                    <h3 class="final-name" id="final-name-display">Sayang</h3>
+
+                    <p class="final-lead-text">
+                        "You are someone very special to me."
+                    </p>
+
+                    <div class="final-quote-box">
+                        <p class="final-sub-text">
+                            "Thank you for being part of my story."
+                        </p>
+                        <span class="final-hearts">💖 💕 💗</span>
+                    </div>
+
+                    <!-- Celebration Action Buttons -->
+                    <div class="final-actions">
+                        <button id="btn-replay" class="btn-secondary">
+                            <span>Putar Ulang</span>
+                            <span class="btn-arrow">↺</span>
+                        </button>
+                        <button id="btn-share" class="btn-primary btn-glow">
+                            <span>Bagikan Momen Ini</span>
+                            <span class="btn-arrow">♡</span>
+                        </button>
+                    </div>
+
+                    <div class="final-wishes-footer">
+                        <p>Dibuat dengan segenap cinta khusus di hari bahagiamu.</p>
+                        <a href="cetak-kartu-qr.html" class="print-qr-shortcut" target="_blank">🖨️ Cetak / Unduh Kartu QR Fisik</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==============================================
+         PHOTO LIGHTBOX MODAL (Vanilla JS)
+         ============================================== -->
+    <div id="lightbox" class="lightbox-modal hidden" role="dialog" aria-modal="true">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button id="lightbox-close" class="lightbox-btn-close" aria-label="Tutup Foto">×</button>
+            
+            <button id="lightbox-prev" class="lightbox-nav-btn prev" aria-label="Foto Sebelumnya">‹</button>
+            <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Foto Berikutnya">›</button>
+
+            <div class="lightbox-polaroid">
+                <div class="lightbox-img-wrapper">
+                    <img id="lightbox-img" src="" alt="Kenangan Spesial">
+                </div>
+                <div class="lightbox-info">
+                    <p id="lightbox-caption" class="lightbox-caption"></p>
+                    <span id="lightbox-counter" class="lightbox-counter">1 / 4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Share / Copy URL -->
+    <div id="toast" class="toast-notification hidden">
+        <span class="toast-icon">✨</span>
+        <span id="toast-message" class="toast-message">Tautan berhasil disalin ke clipboard! ♡</span>
+    </div>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
