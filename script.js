@@ -95,6 +95,35 @@ function showPage(pageNumber) {
 
     state.currentPage = pageNumber;
 
+    // Sync app frame background with page background for seamless edge-to-edge mobile display
+    const appEl = document.getElementById('app');
+    if (appEl) {
+        if (pageNumber === 1) {
+            appEl.style.background = 'var(--night-magenta)';
+        } else if (pageNumber === 2) {
+            appEl.style.background = 'radial-gradient(circle at center, #fff0f5 0%, #fcd6e3 100%)';
+        } else if (pageNumber === 3 || pageNumber === 4) {
+            appEl.style.background = 'var(--scrapbook-bg)';
+        } else if (pageNumber === 5) {
+            appEl.style.background = 'radial-gradient(circle at center, #350c30 0%, #170420 100%)';
+        }
+    }
+
+    // Sync mobile browser theme-color meta
+    let metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (!metaTheme) {
+        metaTheme = document.createElement('meta');
+        metaTheme.name = 'theme-color';
+        document.head.appendChild(metaTheme);
+    }
+    if (pageNumber === 1 || pageNumber === 5) {
+        metaTheme.content = '#150622';
+    } else if (pageNumber === 2) {
+        metaTheme.content = '#fcd6e3';
+    } else {
+        metaTheme.content = '#faf3f5';
+    }
+
     // Show floating music toggle on pages 2, 4, 5
     // Page 3 has its own dedicated interactive vinyl player deck, so we keep floating capsule hidden on page 3 to avoid clutter and overlap
     if (pageNumber === 2 || pageNumber === 4 || pageNumber === 5) {
