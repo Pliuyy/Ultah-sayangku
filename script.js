@@ -19,11 +19,11 @@ const birthdayConfig = {
     songTitle: "About You 1975",
 
     // Teks surat ulang tahun romantis (bisa beberapa paragraf)
-    letter: `Selamat ulang tahun untuk orang yang paling berharga di hidupku! ❤️
+    letter: `Selamat ulang tahun untuk orang yang paling berharga di hidup akuu! ❤️
 
-Setiap detik bersamamu adalah anugerah yang selalu aku syukuri. Terima kasih telah hadir dengan segala kehangatan, senyum manismu yang selalu menenangkan duniaku, dan tulusnya cintamu yang tak pernah pudar.
+Setiap detik sama kamu tuh adalah sebuah anugerah yang selalu aku syukuri. Terima kasih sayangg karna kamu telah hadir dengan segala kehangatan, senyum manismu yang selalu menenangkan duniaku, dan tulusnya cintamu yang tak pernah pudar.
 
-Di hari yang begitu istimewa ini, aku berdoa semoga setiap langkahmu selalu dipenuhi kebahagiaan, kesehatan, kemudahan dalam setiap impian, serta dikelilingi orang-orang yang tulus menyayangimu.
+Di hari yang begitu istimewa ini, aku berdoa semoga setiap langkahmu selalu dipenuhi kebahagiaan, kesehatan, kemudahan dalam setiap impian, serta dikelilingi orang-orang yang tulus menyayangi kamuu.
 
 Apapun cerita yang akan kita tulis esok dan seterusnya, ketahuilah bahwa aku akan selalu ada di sampingmu, menggenggam tanganmu, dan mencintaimu lebih dari hari kemarin.
 
@@ -34,19 +34,19 @@ Happy Birthday, my favorite person in the entire world! ✨♡`,
     photos: [
         {
             src: "assets/images/photo1.png",
-            caption: "Golden hour & tawa bersamamu ♡"
+            caption: "Foto paling gemas sedunia ♡"
         },
         {
             src: "assets/images/photo2.png",
-            caption: "Piknik romantis penuh cerita manis ✨"
+            caption: "Waktu kamu main ke rumah aku ✨"
         },
         {
             src: "assets/images/photo3.png",
-            caption: "Momen perayaan ulang tahun kita 🎂"
+            caption: "Waktu kita main setelah 1 bulan ga ketemu 🤯"
         },
         {
             src: "assets/images/photo4.png",
-            caption: "Kembang api & pantai malam indah 🎇"
+            caption: "Piknik kecil kecilan ga sii hehe 🥰"
         }
     ]
 };
